@@ -8,4 +8,15 @@ This repo contains the official implementation of paper
 >
 > In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition 2022.
 
-# Code and models are coming soon!
+## Code and models are coming soon!
+
+
+
+## Citation
+
+  @inproceedings{xu2022learning,
+    title={Learning to Anticipate Future with Dynamic Context Removal },
+    author={Xu, Xinyu and Li, Yong-Lu and Lu, Cewu},
+    booktitle={CVPR},
+    year={2022}
+  }
