@@ -14,10 +14,10 @@ This repo contains the official implementation of paper
 
 ## Citation
 ```
-  @inproceedings{xu2022learning,
-    title={Learning to Anticipate Future with Dynamic Context Removal },
-    author={Xu, Xinyu and Li, Yong-Lu and Lu, Cewu},
-    booktitle={CVPR},
-    year={2022}
-  }
+@inproceedings{xu2022learning,
+  title={Learning to Anticipate Future with Dynamic Context Removal },
+  author={Xu, Xinyu and Li, Yong-Lu and Lu, Cewu},
+  booktitle={CVPR},
+  year={2022}
+}
 ```
