@@ -1,0 +1,16 @@
+# General exluded files
+__pycache__
+.DS_Store
+.h5
+.vscode
+*.pyc
+.pth
+
+# Data directories
+data/feature
+exp
+weight
+checkpoint
+
+# python notebook related
+*.ipynb_checkpoints
