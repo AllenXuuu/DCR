@@ -28,7 +28,7 @@ python == 3.9
 
 torch == 1.9
 torchvision == 0.10.0
-apex
+apex == 0.1.0
 tensorboardX
 yacs
 pyyaml
@@ -40,7 +40,7 @@ prefetch_generator
 ## Evaluation
 
 We release pre-trained models at [here](https://drive.google.com/drive/folders/1bXFs1_9HBPi74LpsYfxx753Vkc6BbEHa?usp=sharing).  
-To test the performance of our model with RGB-TSM backbone on EPIC-KITCHENS-100[1], you can run the following command.
+To test the performance of our model, for example using RGB-TSM backbone on EPIC-KITCHENS-100[1], you can run the following command.
 
 ```
 python eval.py --cfg configs/EK100RGBTSM/eval.yaml --resume ./weights/EK100RGBTSM.pt
@@ -48,7 +48,7 @@ python eval.py --cfg configs/EK100RGBTSM/eval.yaml --resume ./weights/EK100RGBTS
 
 Here ```./weights/EK100RGBTSM.pt``` is the path to the pre-trained model you downloaded.
 
-Results can be found in [Model Zoo](./docs/model_zoo.md).
+More results can be found in [Model Zoo](./docs/model_zoo.md).
 
 ## Training 
 
