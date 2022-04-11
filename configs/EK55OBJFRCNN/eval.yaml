@@ -1,0 +1,54 @@
+
+main_metric : 'T5_A'
+
+eval:
+  freq : 1
+  data :
+    name : 'EPIC-KITCHENS-55'
+    split : 'valid'
+
+    feat_file : './data/feature/EK55_OBJ_FRCNN/'
+    feature : 'FRCNN'
+    feature_fps : 30
+    feature_dim : 352
+
+    forward_frame : 8
+    past_frame : 40
+    
+    fps : 4
+    batch_size : 128
+    num_workers : 2
+    cache : false
+
+
+  
+model:
+  name : 'DCR'
+  
+  feat_dim: 352
+  past_frame : 40
+  anticipation_frame : 4
+  action_frame : 4
+  
+  reasoner:
+    name : 'transformer'
+    d_model : 1024
+    nhead : 16
+    dff : 4096
+    depth : 6
+    dropout : 0.1
+    pe_type : 'learnable'
+
+  classifier:
+    dropout: 0.4
+    action: true
+    verb: true
+    noun : true
+
+  loss:
+    name : 'CE'
+    verb : 0.5
+    noun : 0.5
+    feat_mse : 1.
+    next_cls : 0.5
+    smooth: 0.2

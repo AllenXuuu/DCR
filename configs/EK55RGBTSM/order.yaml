@@ -1,0 +1,71 @@
+
+save_freq : 50
+
+eval:
+  freq : 5
+  data :
+    name : 'EPIC-KITCHENS-55'
+    split : 'valid'
+
+    feat_file : './data/feature/EK55_RGB_TSM/'
+    feature : 'TSM'
+    feature_fps : 8
+    feature_dim : 2048
+
+    forward_frame : 8
+    past_frame : 40
+
+    fps : 4
+    batch_size : 512
+    num_workers : 2
+    cache : False
+
+train:
+  data :
+    name : 'EPIC-KITCHENS-55'
+    split : 'train'
+
+    feat_file : './data/feature/EK55_RGB_TSM/'
+    feature : 'TSM'
+    feature_fps : 8
+    feature_dim : 2048
+
+    forward_frame : 8
+    past_frame : 40
+
+    fps : 4
+    batch_size : 512
+    num_workers : 2
+    cache : False
+
+  optimizer:
+    name: 'AdamW'
+    base_lr : 1e-4
+    betas : (0.9, 0.999)
+    weight_decay : 1e-5
+  
+  max_epoch : 50
+  scheduler:
+    name : 'WarmupCos'
+    warmup_epoch : 5
+    step : [50]
+
+model:
+  name : 'orderNet'
+  
+  feat_dim: 2048
+  past_frame : 40
+  anticipation_frame : 4
+  action_frame : 4
+  
+  reasoner:
+    name : 'transformer'
+    d_model : 1024
+    nhead : 16
+    dff : 4096
+    depth : 6
+    dropout : 0.1
+    pe_type : 'no'
+
+  loss:
+    sigma: 0.
