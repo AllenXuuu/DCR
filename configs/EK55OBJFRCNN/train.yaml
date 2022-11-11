@@ -25,7 +25,7 @@ eval:
 train:
   data :
     name : 'EPIC-KITCHENS-55'
-    split : 'valid'
+    split : 'train'
 
     feat_file : './data/feature/EK55_OBJ_FRCNN/'
     feature : 'FRCNN'
