@@ -54,7 +54,6 @@ To do the late fusion, you need to store the predicted results of each model fir
 python eval_and_extract.py --cfg configs/EK100RGBTSM/eval.yaml --resume ./weights/EK100RGBTSM.pt
 
 python fuse/fuse_EK100.py
-
 ```
 
 The following is expected validation set performace.
@@ -66,7 +65,7 @@ The following is expected validation set performace.
 | ActionBanks   | 14.7        | 14.5        | 11.8         |
 | TransAction   | 16.6        | 13.8        | 15.5         |
 | AVT           | 15.9        | 11.9        | 14.1         |
-| DCR           | 18.3        | 14.7        | 15.8         |
+| **DCR**           | 18.3        | 14.7        | 15.8         |
 
 ##### EPIC-KITCHENS-55
 | Method        | Top-1       | Top-5   |  
@@ -80,7 +79,7 @@ The following is expected validation set performace.
 |ActionBanks    |15.1|35.6|
 |Ego-OMG        |19.2|-|
 |AVT            |16.6|37.6|
-|DCR            |19.2|41.2|
+|**DCR**            |19.2|41.2|
 
 ##### EGTEA GAZE+
 | Method        | Top-5       | Recall@5   |  
@@ -93,7 +92,7 @@ The following is expected validation set performace.
 |RL             |62.7|52.2|
 |EL             |63.8|55.1|
 |RULSTM         |66.4|58.6|
-|DCR(Updated)   |67.9|61.3|
+|**DCR(Updated)**   |67.9|61.3|
 
 
 The EPIC-KITCHENS test set files are at [here](https://drive.google.com/drive/folders/129uG7kI1IbsHLPwvVCLHPLBacLSUf1sk?usp=sharing).
