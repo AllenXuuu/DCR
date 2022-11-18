@@ -82,6 +82,7 @@ The following is expected validation set performace.
 |**DCR**            |19.2|41.2|
 
 ##### EGTEA GAZE+
+We continue to work on EGTEA GAZE+ to improve models.
 | Method        | Top-5       | Recall@5   |  
 | -----------   | ----------- | ----------- | 
 |DMR            |55.7|38.1|
