@@ -11,7 +11,7 @@ This repo contains the official implementation of paper
 > [[arxiv](https://arxiv.org/abs/2204.02587)] [[code](https://github.com/AllenXuuu/DCR)] [[model](https://drive.google.com/drive/folders/1bXFs1_9HBPi74LpsYfxx753Vkc6BbEHa?usp=sharing)]
 ****
 
-## Data Prepare
+## Data Preparation
 
 We reorganize the annotation files of four datasets[1-4] in ```data``` folder.   
 You need to download pre-extracted feature into ```data/feature``` folder.    
@@ -47,6 +47,56 @@ python eval.py --cfg configs/EK100RGBTSM/eval.yaml --resume ./weights/EK100RGBTS
 ```
 
 Here ```./weights/EK100RGBTSM.pt``` is the path to the pre-trained model you downloaded.
+
+To do the late fusion, you need to store the predicted results of each model first, then run the fusion script. For example
+
+```
+python eval_and_extract.py --cfg configs/EK100RGBTSM/eval.yaml --resume ./weights/EK100RGBTSM.pt
+
+python fuse/fuse_EK100.py
+
+```
+
+The following is expected validation set performace.
+
+##### EPIC-KITCHENS-100
+| Method        | Overall     |  Unseen     |  Tail |  
+| -----------   | ----------- | ----------- |  ----------- | 
+| RULSTM        | 14.0        | 14.1        | 11.1         |
+| ActionBanks   | 14.7        | 14.5        | 11.8         |
+| TransAction   | 16.6        | 13.8        | 15.5         |
+| AVT           | 15.9        | 11.9        | 14.1         |
+| DCR           | 18.3        | 14.7        | 15.8         |
+
+##### EPIC-KITCHENS-55
+| Method        | Top-1       | Top-5   |  
+| -----------   | ----------- | ----------- | 
+|ATSN           |-   |16.3|
+|ED             |-   |25.8|
+|MCE            |-   |26.1|
+|RULSTM         |15.3|35.3|
+|FHOI           |10.4|25.5|
+|ImagineRNN     |-   |35.6|
+|ActionBanks    |15.1|35.6|
+|Ego-OMG        |19.2|-|
+|AVT            |16.6|37.6|
+|DCR            |19.2|41.2|
+
+##### EGTEA GAZE+
+| Method        | Top-5       | Recall@5   |  
+| -----------   | ----------- | ----------- | 
+|DMR            |55.7|38.1|
+|ATSN           |40.5|31.6|
+|NCE            |56.3|43.8|
+|TCN            |58.5|47.1|
+|ED             |60.2|54.6|
+|RL             |62.7|52.2|
+|EL             |63.8|55.1|
+|RULSTM         |66.4|58.6|
+|DCR(Updated)   |67.9|61.3|
+
+
+The EPIC-KITCHENS test set files are at [here](https://drive.google.com/drive/folders/129uG7kI1IbsHLPwvVCLHPLBacLSUf1sk?usp=sharing).
 
 More results can be found in [Model Zoo](./docs/model_zoo.md).
 

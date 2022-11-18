@@ -6,7 +6,7 @@
 | -----------   | ----------- | ----------- | ----------- | ----------- | ----------- |  
 | RGB   | RULSTM    | TSN       |   27.5    | 29.0  |  13.3 |
 | RGB   | AVT       | TSN       |   27.2    | 30.7  |  13.6 |
-| RGB   | AVT       | irCSN-52  |   25.5    | 28.1  |  12.8 |
+| RGB   | AVT       | irCSN-152  |   25.5   | 28.1  |  12.8 |
 | RGB   | AVT       | ViT*      |   28.7    | 32.3  |  14.9 |
 | RGB   | DCR(LSTM) | TSN       |   27.9    | 28.0  |  14.5 |
 | RGB   | DCR(LSTM) | TSM       |   28.4    | 28.5  |  15.2 |
@@ -42,3 +42,20 @@
 
 
 The EPIC-KITCHENS test server submission files are at [here](https://drive.google.com/drive/folders/129uG7kI1IbsHLPwvVCLHPLBacLSUf1sk?usp=sharing).
+
+
+#### EGTEA GAZE+
+
+| Method        | Top-5       | Recall@5   |  
+| -----------   | ----------- | ----------- | 
+|DMR            |55.7|38.1|
+|ATSN           |40.5|31.6|
+|NCE            |56.3|43.8|
+|TCN            |58.5|47.1|
+|ED             |60.2|54.6|
+|RL             |62.7|52.2|
+|EL             |63.8|55.1|
+|RULSTM         |66.4|58.6|
+|DCR(Updated)   |67.9|61.3|
+
+
